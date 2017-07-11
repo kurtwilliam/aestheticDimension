@@ -5,24 +5,23 @@
 	<title>Aesthetic Dimension</title>
 	<link rel="stylesheet" type="text/css" href="public/styles/style.css">
 </head>
-<body>
-	<header>
+<body class="landingPage">
+	<header id="header">
 		<nav>
 			<ul>
-				<li><a href="about.html">about</a></li>
-				<li><a href="projects.html">projects</a></li>
-				<li><a href="blog.html">blog</a></li>
-				<li><a href="contact.html">contact</a></li>
+				<li><a id="aboutTag" class="tag" data-bg="assets/hover/About.svg" href="about.html">about</a></li>
+				<li><a id="projectsTag" data-bg="assets/hover/Projects.svg" href="projects.html">projects</a></li>
+				<li><a id="blogTag" data-bg="assets/hover/Blog.svg" href="blog.html">blog</a></li>
+				<li><a id="contactTag" data-bg="assets/hover/Contact.svg" href="contact.html">contact</a></li>
 			</ul>
 		</nav>
 		<div class="titles">
 			<h1>aesthetic dimension</h1>
 			<h2>Integrated Design Services</h2>
 		</div>
-		<div class="fill1 fill">
+		<!-- <div class="fill1 fill">
 			<?xml version="1.0" encoding="UTF-8"?>
 			<svg width="548px" height="596px" viewBox="0 0 548 596" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
 			    <title>Fill 1</title>
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
@@ -36,7 +35,6 @@
 		<div class="fill2 fill">
 			<?xml version="1.0" encoding="UTF-8"?>
 			<svg width="433px" height="440px" viewBox="0 0 433 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
 			    <title>Fill 5</title>
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
@@ -50,7 +48,6 @@
 		<div class="fill3 fill">
 			<?xml version="1.0" encoding="UTF-8"?>
 			<svg width="660px" height="423px" viewBox="0 0 660 423" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
 			    <title>Fill 3</title>
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
@@ -64,7 +61,6 @@
 		<div class="fill4 fill">
 			<?xml version="1.0" encoding="UTF-8"?>
 			<svg width="672px" height="547px" viewBox="0 0 672 547" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
 			    <title>Group</title>
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
@@ -88,8 +84,57 @@
 			        </g>
 			    </g>
 			</svg>
-		</div>
+		</div> -->
 	</header>
-	<script src="/public/scripts/app.js"></script>
+	<script src="public/scripts/app.js"></script>
+	<script>
+		// CHANGE LANDING PAGE ON HOVER!
+
+		// Get list items to hover 
+		let aboutTag = document.getElementById('aboutTag');
+		let projectsTag = document.getElementById('projectsTag');
+		let blogTag = document.getElementById('blogTag');
+		let contactTag = document.getElementById('contactTag');
+
+		// Get header element to change BG of on hover
+		let header = document.getElementById('header');
+
+		// Add event listeners to each a tag
+		aboutTag.addEventListener('mouseover', hover);
+		aboutTag.addEventListener('mouseout', hoverOut);
+		projectsTag.addEventListener('mouseover', hover);
+		projectsTag.addEventListener('mouseout', hoverOut);
+		blogTag.addEventListener('mouseover', hover);
+		blogTag.addEventListener('mouseout', hoverOut);
+		contactTag.addEventListener('mouseover', hover);
+		contactTag.addEventListener('mouseout', hoverOut);
+
+		function hover(x) {
+			// On hover of a tag, find data attribute that is equal to elements associated background picture, and set it for header background
+			let data = x.target.dataset.bg;
+			header.style.backgroundImage = `url('${data}')`;
+			header.style.backgroundSize = `cover`;
+
+			// Media Query for background position depending on width
+			if (window.matchMedia("(min-width: 950px)").matches) {
+			  return;
+			} else {
+				header.style.backgroundPosition = 'center';
+			}
+		};
+
+		function hoverOut(x) {
+			// On mouse off of a tag, set header background to default home page style
+			header.style.backgroundImage = `url('assets/hover/landingPage.svg')`;
+			header.style.backgroundSize = `cover`;
+
+			// Media Query for background position depending on width
+			if (window.matchMedia("(min-width: 950px)").matches) {
+			  return;
+			} else {
+				header.style.backgroundPosition = 'center';
+			}
+		};
+	</script>
 </body>
 </html>
