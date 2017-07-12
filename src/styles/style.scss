@@ -252,15 +252,21 @@ header {
 				-webkit-text-stroke-color: black;
 			}
 		}
-		.hamburgerMenu {
+		.burger {
 			width:40px;
 			display:flex;
 			flex-direction: column;
-			.hamburgerLine{
+			.burgerLine{
 				width:100%;
 				border:1px solid black;
 				margin:5px 0;
 			}
+		}
+		.burger:hover {
+			cursor: pointer;
+		}
+		.hidden {
+			display:none;
 		}
 		ul {
 			display:flex;
@@ -390,4 +396,8 @@ header {
 			}
 		}
 	}
+}
+
+.hidden {
+	display:none;
 }

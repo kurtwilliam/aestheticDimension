@@ -359,16 +359,20 @@ header {
           -webkit-text-fill-color: transparent;
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: black; } }
-    .twoColumns .leftColumn .hamburgerMenu {
+    .twoColumns .leftColumn .burger {
       width: 40px;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
           flex-direction: column; }
-      .twoColumns .leftColumn .hamburgerMenu .hamburgerLine {
+      .twoColumns .leftColumn .burger .burgerLine {
         width: 100%;
         border: 1px solid black;
         margin: 5px 0; }
+    .twoColumns .leftColumn .burger:hover {
+      cursor: pointer; }
+    .twoColumns .leftColumn .hidden {
+      display: none; }
     .twoColumns .leftColumn ul {
       display: -ms-flexbox;
       display: flex;
@@ -492,3 +496,6 @@ header {
         list-style: none;
         font-size: 3rem;
         font-family: "Calluna", serif; }
+
+.hidden {
+  display: none; }
