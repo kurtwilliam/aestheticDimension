@@ -210,6 +210,7 @@ header {
 .twoColumns {
 	width:100%;
 	height:auto;
+	min-height: 100vh;
 	position: relative;
 	.leftColumn {
 		position: absolute;
@@ -343,36 +344,36 @@ header {
 			margin-left: 0;
 		}
 	}
+	.innerRightColumn {
+		padding: 120px 0;
+		max-width: 650px; 
+		@media (max-width: 1160px){
+			padding: 120px 5px;
+		}
+		@media(max-width: 768px) {
+			margin-top:130px;
+			padding: 0 35px;
+		}
+		@media(max-width: 500px) {
+			margin-top:95px;
+			padding: 0 15px;
+		}
+		p {
+			font-size: 2rem;
+			em {
+				font-size: 2rem;
+			}
+		}
+		.mainP {
+			font-size: 3rem;
+			font-family: "Calluna", serif;
+		}
+	}
 }
 
 .innerRightColumnAbout {
-	padding: 120px 0;
-	max-width: 650px; 
-	@media (max-width: 1160px){
-		padding: 120px 5px;
-	}
-	@media(max-width: 768px) {
-		margin-top:130px;
-		padding: 0 35px;
-	}
-	@media(max-width: 500px) {
-		margin-top:95px;
-		padding: 0 15px;
-	}
-	div {
-	}
-	p {
-		font-size: 2rem;
-		em {
-			font-size: 2rem;
-		}
-	}
 	p:nth-of-type(2) {
 		margin:30px 0;
-	}
-	.mainP {
-		font-size: 3rem;
-		font-family: "Calluna", serif;
 	}
 	.mainP:nth-of-type(2){
 		width:50%;
