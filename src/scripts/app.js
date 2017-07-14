@@ -84,7 +84,9 @@ if ( w < 768 ) {
 	burgerMenu.classList.add("hidden");
 }
 
-// SVG
+
+
+// Home SVG
 
 // Get SVG's and LI
 
