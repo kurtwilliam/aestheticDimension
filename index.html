@@ -4,15 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Aesthetic Dimension</title>
 	<link rel="stylesheet" type="text/css" href="public/styles/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body class="landingPage">
 	<header id="header">
 		<nav>
 			<ul>
 				<li><a id="aboutTag" class="tag" data-bg="assets/hover/About.svg" href="about.html">about</a></li>
-				<li><a id="projectsTag" data-bg="assets/hover/Projects.svg" href="projects.html">projects</a></li>
-				<li><a id="blogTag" data-bg="assets/hover/Blog.svg" href="blog.html">blog</a></li>
-				<li><a id="contactTag" data-bg="assets/hover/Contact.svg" href="contact.html">contact</a></li>
+				<li><a id="projectsTag" class="tag" data-bg="assets/hover/Projects.svg" href="projects.html">projects</a></li>
+				<li><a id="blogTag" class="tag" data-bg="assets/hover/Blog2-min.png" href="blog.html">blog</a></li>
+				<li><a id="contactTag" class="tag" data-bg="assets/hover/Contact.svg" href="contact.html">contact</a></li>
 			</ul>
 		</nav>
 		<div class="titles">
@@ -22,9 +23,9 @@
 		<div class="mobileUL">
 			<ul>
 				<li><a id="aboutTag" class="tag" data-bg="assets/hover/About.svg" href="about.html">about</a></li>
-				<li><a id="projectsTag" data-bg="assets/hover/Projects.svg" href="projects.html">projects</a></li>
-				<li><a id="blogTag" data-bg="assets/hover/Blog.svg" href="blog.html">blog</a></li>
-				<li><a id="contactTag" data-bg="assets/hover/Contact.svg" href="contact.html">contact</a></li>
+				<li><a id="projectsTag" class="tag" data-bg="assets/hover/Projects.svg" href="projects.html">projects</a></li>
+				<li><a id="blogTag" class="tag" data-bg="assets/hover/Blog2-min.png" href="blog.html">blog</a></li>
+				<li><a id="contactTag" class="tag" data-bg="assets/hover/Contact.svg" href="contact.html">contact</a></li>
 			</ul>
 		</div>
 		<!-- <div class="fill1 fill">
@@ -122,26 +123,30 @@
 			let data = x.target.dataset.bg;
 			header.style.backgroundImage = `url('${data}')`;
 			header.style.backgroundSize = `cover`;
+			
+			// if (.classList.add('hollowText');
 
 			// Media Query for background position depending on width
-			if (window.matchMedia("(min-width: 950px)").matches) {
-			  return;
-			} else {
-				header.style.backgroundPosition = 'center';
-			}
+			// if (window.matchMedia("(min-width: 950px)").matches) {
+			//   return;
+			// } else {
+			// 	header.style.backgroundPosition = 'center';
+			// }
 		};
 
 		function hoverOut(x) {
 			// On mouse off of a tag, set header background to default home page style
 			header.style.backgroundImage = `url('assets/hover/landingPage.svg')`;
 			header.style.backgroundSize = `cover`;
+			tag.classList.remove('hollowText');
+			// -webkit-text-stroke-width: 1px;
 
 			// Media Query for background position depending on width
-			if (window.matchMedia("(min-width: 950px)").matches) {
-			  return;
-			} else {
-				header.style.backgroundPosition = 'center';
-			}
+			// if (window.matchMedia("(min-width: 950px)").matches) {
+			//   return;
+			// } else {
+			// 	header.style.backgroundPosition = 'center';
+			// }
 		};
 	</script>
 </body>
