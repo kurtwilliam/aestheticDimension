@@ -8,8 +8,10 @@ html{ margin:0; padding:0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 62.5%; font-family: 'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 @font-face { font-family: Brandon Grotesque; src: url('../../Brandon-Grotesque/Brandon_reg.otf'); } 
-@font-face { font-family: Brandon Grotesque; font-weight: bold; src: url('../../Brandon-Grotesque/Brandon_blk.otf');}
+@font-face { font-family: Brandon Grotesque; font-weight: black; src: url('../../Brandon-Grotesque/Brandon_blk.otf');}
 @font-face { font-family: Brandon Grotesque; font-weight: 500; src: url('../../Brandon-Grotesque/Brandon_med.otf');}
+@font-face { font-family: Brandon Grotesque; font-weight: bold; src: url('../../Brandon-Grotesque/Brandon_bld.otf');}
+@font-face { font-family: Brandon Grotesque; font-weight: light; src: url('../../Brandon-Grotesque/Brandon_light.otf');}
 @font-face { font-family: Calluna; src: url('../../Calluna/Calluna-Regular.otf');}
 
 h1,h2,h3,h4 { padding:0; margin:0; }
@@ -424,6 +426,8 @@ header {
 				bottom:50px;
 				left:50%;
 				transform: translate(-50%,0);
+				width:45px;
+				height:48px;
 				@media (max-width:768px) {
 					position:relative;
 					bottom: inherit;
@@ -466,6 +470,9 @@ header {
 		.mainP {
 			font-size: 4rem;
 			font-family: "Calluna", serif;
+			@media(max-width:500px){
+				font-size: 2.5rem;
+			}
 		}
 		p {
 			font-size: 2rem;
@@ -665,9 +672,6 @@ header {
 		position: relative;
 		p {
 			font-family: 'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
-			@media (max-width:500px){
-				
-			}
 		}
 		.pPageTitle {
 			font-weight: 700;
@@ -758,9 +762,18 @@ header {
 			font-size: 2rem;
 		}
 	}
-	img {
+	.singlePhoto {
 		width:100%;
 		height:auto;
+		@media(max-width:600px){
+			position: relative;
+			width:100vw;
+			left: -35px;
+		}
+		@media(max-width:500px){
+			width:100vw;
+			left: -15px;
+		}
 	}
 	.pDesc {
 		margin:35px 0;
@@ -809,31 +822,101 @@ header {
 				font-size: 3.5rem;
 				text-decoration: none;
 				color:black;
-			}
-			.blogLine {
-				width:100%; 
-				height: 7px;
-				background: url('../../assets/svg/BlueGradient.png');
-				margin-bottom: 20px;
+				@media(max-width:500px){
+					font-size: 2.4rem;
+				}
 			}
 			.blogContent {
 				font-size: 2.5rem;
-			}
-			.postInfo {
-				display: flex;
-				justify-content: space-between;
-				margin-top: 16px;
-			}
-			.postTags a{
-				color:rgb(0,155,208);
-				font-style: italic;
-				text-decoration: none;
-				font-size: 2.5rem;
-				font-family: 'Calluna', serif;
-			}
-			.postDate {
-				color:rgb(156,158,160);
+				@media(max-width:500px){
+					font-size: 1.8rem;
+				}
 			}
 		}
+		.blogPost:last-of-type {
+			margin-bottom:40px;
+		}
 	}
+
+	// BLOGPOST
+
+	.blogPostInfo {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 16px;
+	}
+	.blogPostTags a{
+		color:rgb(0,155,208);
+		font-style: italic;
+		text-decoration: none;
+		font-size: 2.5rem;
+		font-family: 'Calluna', serif;
+		@media(max-width:500px){
+			font-size: 1.8rem;
+		}
+	}
+	.blogPostDate {
+		color:rgb(156,158,160);
+		font-size: 2.5rem;
+		@media(max-width:500px){
+			font-size: 1.8rem;
+		}
+	}
+
+	.postTitle {
+		font-size: 5rem;
+		font-family:'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		@media (max-width: 500px){
+			font-size: 3.5rem;
+		}
+	}
+	.postDesc {
+		font-size: 3.5rem;
+		font-family:'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: light;
+		@media (max-width: 500px){
+			font-size: 2.5rem;
+		}
+	}
+	.blogLine {
+		width:100%; 
+		height: 7px;
+		background: url('../../assets/svg/BlueGradient.png');
+		background-size:cover;
+		margin-bottom: 20px;
+	}
+	.postContent {
+		margin-bottom:35px;
+		@media (max-width: 500px){
+			font-size: 2.5rem;
+		}
+	}
+	.postContent:first-of-type {
+		margin-top: 40px;
+	}
+	.postContent:last-of-type {
+		margin-bottom: 40px;
+	}
+	.portraitPost {
+		width:100%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		img {
+			height:auto;
+			@media (max-width: 500px){
+				position: relative;
+				// left:-15px;
+				width:100vw;
+			}
+		}
+		blockquote {
+			max-width:300px;
+			color: rgb(138,138,138);
+			font-size: 1.8rem;
+			line-height: 1.8rem;
+		}
+	}
+
 }
