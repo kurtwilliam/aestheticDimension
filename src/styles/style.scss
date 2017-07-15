@@ -464,7 +464,7 @@ header {
 			padding: 0 15px;
 		}
 		.mainP {
-			font-size: 3rem;
+			font-size: 4rem;
 			font-family: "Calluna", serif;
 		}
 		p {
@@ -487,18 +487,14 @@ header {
 	.leftColumnContact{
 		background: url('../../assets/svg/contactSidebar.svg');
 		background-size: cover;
-		@media (max-width: 768px){
-			// background-size: 130%;
-			// background-position: center 35%;
-		}
 	}
 	.leftColumnProjects{
 		background: url('../../assets/svg/Group2.svg');
 		background-size: cover;
-		@media (max-width: 768px){
-			// background-size: 130%;
-			// background-position: center 35%;
-		}
+	}
+	.leftColumnBlog{
+		background: url('../../assets/svg/blueGradient.png');
+		background-size: cover;
 	}
 }
 
@@ -795,3 +791,49 @@ header {
 	}
 }
 
+// BLOG 
+
+.innerRightColumn.innerRightColumnBlog {
+	max-width: 700px;
+	.blogPosts {
+		display:flex;
+		flex-direction: column;
+		width:100%;
+		.blogPost {
+			width:100%;
+			height:auto;
+			margin-top: 40px;
+			.blogTitle a{
+				font-family:'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-weight: 500;
+				font-size: 3.5rem;
+				text-decoration: none;
+				color:black;
+			}
+			.blogLine {
+				width:100%; 
+				height: 7px;
+				background: url('../../assets/svg/BlueGradient.png');
+				margin-bottom: 20px;
+			}
+			.blogContent {
+				font-size: 2.5rem;
+			}
+			.postInfo {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 16px;
+			}
+			.postTags a{
+				color:rgb(0,155,208);
+				font-style: italic;
+				text-decoration: none;
+				font-size: 2.5rem;
+				font-family: 'Calluna', serif;
+			}
+			.postDate {
+				color:rgb(156,158,160);
+			}
+		}
+	}
+}

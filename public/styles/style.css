@@ -530,7 +530,7 @@ header {
       .twoColumns .innerRightColumn {
         padding: 0 15px; } }
     .twoColumns .innerRightColumn .mainP {
-      font-size: 3rem;
+      font-size: 4rem;
       font-family: "Calluna", serif; }
     .twoColumns .innerRightColumn p {
       font-size: 2rem; }
@@ -550,6 +550,9 @@ header {
     background-size: cover; }
   .twoColumns .leftColumnProjects {
     background: url("../../assets/svg/Group2.svg");
+    background-size: cover; }
+  .twoColumns .leftColumnBlog {
+    background: url("../../assets/svg/blueGradient.png");
     background-size: cover; }
 
 .innerRightColumnAbout p:nth-of-type(2) {
@@ -805,3 +808,43 @@ header {
   @media (max-width: 600px) {
     .innerRightColumn.innerRightColumnProject .twoPhotos img:nth-of-type(2) {
       margin-top: 35px; } }
+
+.innerRightColumn.innerRightColumnBlog {
+  max-width: 700px; }
+  .innerRightColumn.innerRightColumnBlog .blogPosts {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 100%; }
+    .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost {
+      width: 100%;
+      height: auto;
+      margin-top: 40px; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .blogTitle a {
+        font-family: 'Brandon Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 3.5rem;
+        text-decoration: none;
+        color: black; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .blogLine {
+        width: 100%;
+        height: 7px;
+        background: url("../../assets/svg/BlueGradient.png");
+        margin-bottom: 20px; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .blogContent {
+        font-size: 2.5rem; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .postInfo {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+        margin-top: 16px; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .postTags a {
+        color: #009bd0;
+        font-style: italic;
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-family: 'Calluna', serif; }
+      .innerRightColumn.innerRightColumnBlog .blogPosts .blogPost .postDate {
+        color: #9c9ea0; }
