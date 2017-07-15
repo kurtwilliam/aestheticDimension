@@ -1,25 +1,170 @@
-// FIXED SIDE BAR AFTER 100VH
+// Check to see if on home page
 
-// Retrieve height of screen, scroll position, and column element
-// let h = window.innerHeight;
-// let scrollPos = 0;
-// let leftColumn = document.getElementById('leftColumn');
+document.addEventListener('DOMContentLoaded', function(){
+	let aboutTag = document.getElementById('aboutTag');
+   if ( aboutTag ) { //if the element exists add the click event
+   	
+   
 
-// window.addEventListener('scroll', (e) => {
-//   scrollPos = window.scrollY;
-//   if ( (scrollPos - h) < 0 ) {
-//   	leftColumn.style.position = 'absolute';
-//   } else {
-//   	leftColumn.style.position = 'fixed';
-//   }
-// });
+// CHANGE LANDING PAGE ON HOVER!
+
+// Get list items to hover 
+let projectsTag = document.getElementById('projectsTag');
+let blogTag = document.getElementById('blogTag');
+let contactTag = document.getElementById('contactTag');
+
+// Get SVGs
+let initYellow = document.getElementById('initYellow');
+let bgYellow = document.getElementById('bgYellow');
+let hoverYellow = document.getElementById('hoverYellow');
+let initRed = document.getElementById('initRed');
+let bgRed = document.getElementById('bgRed');
+let hoverRed = document.getElementById('hoverRed');
+let initGreen = document.getElementById('initGreen');
+let bgGreen = document.getElementById('bgGreen');
+let hoverGreen = document.getElementById('hoverGreen');
+let initBlue = document.getElementById('initBlue');
+let bgBlue = document.getElementById('bgBlue');
+let hoverBlue = document.getElementById('hoverBlue');
+
+// get red div for zIndex
+let redDiv = document.getElementById('red');
+
+// Get header element to change BG of on hover
+// let header = document.getElementById('header');
+
+// Add event listeners to each a tag
+aboutTag.addEventListener('mouseout', hoverOut);
+projectsTag.addEventListener('mouseout', hoverOut);
+blogTag.addEventListener('mouseout', hoverOut);
+contactTag.addEventListener('mouseout', hoverOut);
+
+// About Tag yellow event listener for hover
+aboutTag.onmouseover = function () {
+	initYellow.classList.remove("hidden");
+	initRed.classList.add("hidden");
+	initGreen.classList.add("hidden");
+	initBlue.classList.add("hidden");
+
+	bgYellow.classList.add("hidden");
+	bgRed.classList.remove("hidden");
+	bgGreen.classList.remove("hidden");
+	bgBlue.classList.remove("hidden");
+
+	initYellow.style.filter = "drop-shadow(5px 9px 6px rgba(67,66,66,.56))"
+	hoverRed.classList.add("hidden");
+	hoverGreen.classList.add("hidden");
+	hoverBlue.classList.add("hidden");
+
+	redDiv.style.zIndex = '-100';
+
+	// Add hollow text class to other tags
+	projectsTag.classList.add('hollowText');
+	blogTag.classList.add('hollowText');
+	contactTag.classList.add('hollowText');
+}
+
+// projects tag red event listener for hover
+projectsTag.onmouseover = function () {
+	initYellow.classList.add("hidden");
+	initRed.classList.add("hidden");
+	initGreen.classList.add("hidden");
+	initBlue.classList.add("hidden");
+
+	bgYellow.classList.remove("hidden");
+	bgRed.classList.add("hidden");
+	bgGreen.classList.remove("hidden");
+	bgBlue.classList.remove("hidden");
+
+	hoverRed.classList.remove("hidden");
+	hoverGreen.classList.add("hidden");
+	hoverBlue.classList.add("hidden");
+
+	aboutTag.classList.add('hollowText');
+	blogTag.classList.add('hollowText');
+	contactTag.classList.add('hollowText');
+}
+
+// blog tag blue event listener for hover
+blogTag.onmouseover = function () {
+	initYellow.classList.add("hidden");
+	initRed.classList.add("hidden");
+	initGreen.classList.add("hidden");
+	initBlue.classList.add("hidden");
+
+	bgYellow.classList.remove("hidden");
+	bgRed.classList.remove("hidden");
+	bgGreen.classList.remove("hidden");
+	bgBlue.classList.add("hidden");
+
+	hoverRed.classList.add("hidden");
+	hoverGreen.classList.add("hidden");
+	hoverBlue.classList.remove("hidden");
+
+	projectsTag.classList.add('hollowText');
+	aboutTag.classList.add('hollowText');
+	contactTag.classList.add('hollowText');
+}
+
+// contact tag green event listener for hover
+contactTag.onmouseover = function () {
+	initYellow.classList.add("hidden");
+	initRed.classList.add("hidden");
+	initGreen.classList.add("hidden");
+	initBlue.classList.add("hidden");
+
+	bgYellow.classList.remove("hidden");
+	bgRed.classList.remove("hidden");
+	bgGreen.classList.add("hidden");
+	bgBlue.classList.remove("hidden");
+
+	hoverRed.classList.add("hidden");
+	hoverBlue.classList.add("hidden");
+	hoverGreen.classList.remove("hidden");
+
+	projectsTag.classList.add('hollowText');
+	blogTag.classList.add('hollowText');
+	aboutTag.classList.add('hollowText');
+}
+
+// Revert BG to normal
+function hoverOut(x) {
+	initYellow.classList.remove("hidden");
+	bgYellow.classList.add("hidden");
+	initRed.classList.remove("hidden");
+	bgRed.classList.add("hidden");
+	hoverRed.classList.add("hidden");
+	initGreen.classList.remove("hidden");
+	bgGreen.classList.add("hidden");
+	hoverGreen.classList.add("hidden");
+	initBlue.classList.remove("hidden");
+	bgBlue.classList.add("hidden");
+	hoverBlue.classList.add("hidden");
+
+	redDiv.style.zIndex = '1';
+	initYellow.style.filter = "drop-shadow(0 0 0 rgba(0,0,0,0))"
+
+	// Remove hollow text on hover out
+	aboutTag.classList.remove('hollowText');
+	projectsTag.classList.remove('hollowText');
+	blogTag.classList.remove('hollowText');
+	contactTag.classList.remove('hollowText');
+};
+
+};
+
+// Check if on page other than home page
+
+// Get Burger
+let burger = document.getElementById('burger');
+if ( burger ) {
+
+
 
 // HIDDEN CLASS
 
 // Burger hide and show
 
-// Get Burger
-let burger = document.getElementById('burger');
 
 // Event listener for screen resize
 window.addEventListener('resize', (e) => {
@@ -57,21 +202,11 @@ burger.addEventListener('click', (e) => {
 
 		// Toggle animation for burger click
 		burger.classList.remove('open');
-
-		// Animate X button for burger
-		// burgerLineTwo.classList.remove('hidden');
-		// burgerLineOne.classList.remove('burgerXOne');
-		// burgerLineThree.classList.remove('burgerXThree');
 	} else {
 		pageTitle.classList.add('vHidden');
 
 		// Toggle animation for burger click
 		burger.classList.add('open');
-
-		// Animate X button for burger
-		// burgerLineTwo.classList.add('hidden');
-		// burgerLineOne.classList.add('burgerXOne');
-		// burgerLineThree.classList.add('burgerXThree');
 	}
 });
 
@@ -83,8 +218,6 @@ if ( w < 768 ) {
 	burger.classList.remove("hidden");
 	burgerMenu.classList.add("hidden");
 }
-
-
 
 // Home SVG
 
@@ -108,3 +241,7 @@ function homeOut(x) {
 	homeHover.style.display = 'none';
 	home.style.display = 'block';
 }
+
+};
+
+});
