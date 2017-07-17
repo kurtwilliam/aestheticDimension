@@ -611,20 +611,26 @@ header {
       font-size: 3rem;
       font-family: "Calluna", serif; }
 
-.innerRightColumnContact {
+.innerRightColumn.innerRightColumnContact {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center; }
-  .innerRightColumnContact a {
+  .innerRightColumn.innerRightColumnContact a {
     color: #439b2c;
     text-decoration: none;
     font-size: 3rem;
     font-family: "Calluna", serif; }
-  .innerRightColumnContact img {
-    margin: 180px 0; }
+  .innerRightColumn.innerRightColumnContact form {
+    max-width: 560px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-direction: column;
+        flex-direction: column; }
 
 .hidden {
   display: none; }
