@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	let aboutTag = document.getElementById('aboutTag');
    if ( aboutTag ) { //if the element exists add the click event
    	
-   
 
 // CHANGE LANDING PAGE ON HOVER!
 
@@ -155,93 +154,103 @@ function hoverOut(x) {
 
 // Check if on page other than home page
 
-// Get Burger
+// Get Burger, if it exists run this code
 let burger = document.getElementById('burger');
 if ( burger ) {
 
+	// HIDDEN CLASS
 
+	// Burger hide and show
 
-// HIDDEN CLASS
+	// Event listener for screen resize
+	window.addEventListener('resize', (e) => {
+	  // JS media query to remove hidden class at mobile responsive
+	  if (window.matchMedia("(min-width: 769px)").matches) {
+	  	burger.classList.add("hidden");
 
-// Burger hide and show
+	  	// Remove hidden class to burgerMenu UL
+	  	burgerMenu.classList.remove("hidden");
+	  } else {
+	  	burger.classList.remove("hidden");
 
+	  	// Add hidden class to burgerMenu UL
+	  	burgerMenu.classList.add("hidden");
+	  }
+	});
 
-// Event listener for screen resize
-window.addEventListener('resize', (e) => {
-  // JS media query to remove hidden class at mobile responsive
-  if (window.matchMedia("(min-width: 769px)").matches) {
-  	burger.classList.add("hidden");
+	// Burger Menu hide and show
 
-  	// Remove hidden class to burgerMenu UL
-  	burgerMenu.classList.remove("hidden");
-  } else {
-  	burger.classList.remove("hidden");
+	// Get Burger Menu UL, pageTitle element, second burger line
 
-  	// Add hidden class to burgerMenu UL
-  	burgerMenu.classList.add("hidden");
-  }
-});
+	let burgerMenu = document.getElementById('burgerMenu');
+	let pageTitle = document.getElementById('pageTitle');
+	let burgerLineTwo = document.getElementById('burgerLineTwo');
+	let burgerLineOne = document.getElementById('burgerLineOne');
+	let burgerLineThree = document.getElementById('burgerLineThree');
 
-// Burger Menu hide and show
+	burger.addEventListener('click', (e) => {
+		// Event listener to toggle hidden class for burger click
+		burgerMenu.classList.toggle('hidden');
 
-// Get Burger Menu UL, pageTitle element, second burger line
+		// if statement to hide .pageTitle on click and display proper menu
+		if (burgerMenu.classList.contains('hidden')) {
+			pageTitle.classList.remove('vHidden');
 
-let burgerMenu = document.getElementById('burgerMenu');
-let pageTitle = document.getElementById('pageTitle');
-let burgerLineTwo = document.getElementById('burgerLineTwo');
-let burgerLineOne = document.getElementById('burgerLineOne');
-let burgerLineThree = document.getElementById('burgerLineThree');
+			// Toggle animation for burger click
+			burger.classList.remove('open');
+		} else {
+			pageTitle.classList.add('vHidden');
 
-burger.addEventListener('click', (e) => {
-	// Event listener to toggle hidden class for burger click
-	burgerMenu.classList.toggle('hidden');
+			// Toggle animation for burger click
+			burger.classList.add('open');
+		}
+	});
 
-	// if statement to hide .pageTitle on click and display proper menu
-	if (burgerMenu.classList.contains('hidden')) {
-		pageTitle.classList.remove('vHidden');
+	// Set hidden classes on page load, if window is smaller than 768px
 
-		// Toggle animation for burger click
-		burger.classList.remove('open');
-	} else {
-		pageTitle.classList.add('vHidden');
+	var w = window.innerWidth;
 
-		// Toggle animation for burger click
-		burger.classList.add('open');
+	if ( w < 768 ) {
+		burger.classList.remove("hidden");
+		burgerMenu.classList.add("hidden");
 	}
-});
 
-// Set hidden classes on page load, if window is smaller than 768px
+	// Home SVG
 
-var w = window.innerWidth;
+	// Get SVG's and LI
 
-if ( w < 768 ) {
-	burger.classList.remove("hidden");
-	burgerMenu.classList.add("hidden");
-}
+	let home = document.getElementById('home');
+	let homeHover = document.getElementById('homeHover');
+	let homeSVG = document.getElementById('homeSVG');
 
-// Home SVG
+	// Attach Event Listener 
+	homeSVG.addEventListener('mouseover', homeOver);
+	homeSVG.addEventListener('mouseout', homeOut);
 
-// Get SVG's and LI
+	// run hover function and hoverout function
+	function homeOver(x) {
+		home.style.display = 'none';
+		homeHover.style.display = 'block';
+	}
 
-let home = document.getElementById('home');
-let homeHover = document.getElementById('homeHover');
-let homeSVG = document.getElementById('homeSVG');
+	function homeOut(x) {
+		homeHover.style.display = 'none';
+		home.style.display = 'block';
+	}
+};
 
-// Attach Event Listener 
-homeSVG.addEventListener('mouseover', homeOver);
-homeSVG.addEventListener('mouseout', homeOut);
+// Get form, if it exists run code
+let form = document.getElementById('form');
+if ( form ) {
+	let input = document.getElementsByClassName('meterWidth');
 
-// run hover function and hoverout function
-function homeOver(x) {
-	home.style.display = 'none';
-	homeHover.style.display = 'block';
-}
+	input.oninput = function(){meterWidth};
 
-function homeOut(x) {
-	homeHover.style.display = 'none';
-	home.style.display = 'block';
-}
+	input.addEventListener("input", meterWidth);
 
+	function meterWidth(x) {
+		x.style.width = "100%";
+	} 
 };
 
 });

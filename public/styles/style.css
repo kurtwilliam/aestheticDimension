@@ -616,21 +616,63 @@ header {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center; }
+  font-family: "Calluna", serif; }
+  .innerRightColumn.innerRightColumnContact .mainP {
+    width: 100%; }
   .innerRightColumn.innerRightColumnContact a {
     color: #439b2c;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: "Calluna", serif; }
   .innerRightColumn.innerRightColumnContact form {
-    max-width: 560px;
+    position: relative;
+    width: 560px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between;
     -ms-flex-direction: column;
         flex-direction: column; }
+    .innerRightColumn.innerRightColumnContact form input, .innerRightColumn.innerRightColumnContact form textarea {
+      font-size: 2.5rem;
+      border: none;
+      resize: none;
+      margin-top: 70px;
+      font-family: "Calluna", serif;
+      width: 100%; }
+    .innerRightColumn.innerRightColumnContact form button {
+      background: none;
+      border: none;
+      margin: 70px auto 0 auto;
+      width: 50%; }
+  .innerRightColumn.innerRightColumnContact .inputMeter {
+    position: relative; }
+  .innerRightColumn.innerRightColumnContact .meter {
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    background: #868788; }
+  .innerRightColumn.innerRightColumnContact .meter > span {
+    display: block;
+    height: 100%;
+    width: 1%;
+    background: #439b2c;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out; }
+  .innerRightColumn.innerRightColumnContact .formRow {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    width: 100%; }
+    .innerRightColumn.innerRightColumnContact .formRow .inputMeter {
+      width: 47.5%; }
+      .innerRightColumn.innerRightColumnContact .formRow .inputMeter .meter {
+        width: 100%; }
+    .innerRightColumn.innerRightColumnContact .formRow input {
+      width: 100%; }
 
 .hidden {
   display: none; }

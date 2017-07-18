@@ -569,18 +569,71 @@ header {
 .innerRightColumn.innerRightColumnContact {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	font-family: "Calluna", serif;
+	// align-items: center;
+	.mainP {
+		width:100%;
+	}
 	a{
 		color:rgb(67,155,44);
 		text-decoration: none;
-		font-size: 3rem;
+		font-size: 4rem;
 		font-family: "Calluna", serif;
 	}
 	form {
-		max-width:560px;
+		position: relative;
+		width:560px;
 		display:flex;
 		justify-content: space-between;
-		flex-direction: column;
+		flex-direction: column;		
+		input, textarea {
+			font-size: 2.5rem;
+			border: none;
+			resize: none;
+			margin-top:70px;
+			font-family: "Calluna", serif;
+			width:100%;
+		}
+		button {
+			background: none;
+			border:none;
+			margin:70px auto 0 auto;
+			width: 50%;
+		}
+	}
+	.inputMeter{
+		position: relative;
+	}
+	.meter { 
+		height: 5px;
+		width:100%;
+		position: absolute;
+		background: rgb(134,135,136);
+	}
+	.meter > span {
+	  	display: block;
+	  	height: 100%;
+	  	width:1%;
+		background:rgb(67,155,44);
+	  	position: relative;
+	  	overflow: hidden;
+	  	transition: all 0.5s ease-in-out;
+	}
+	.formRow{
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		width:100%;
+		.inputMeter{
+			width:47.5%;
+			.meter {
+				width:100%;
+			}
+		}
+		input{
+			width:100%;
+		}
+		
 	}
 }
 

@@ -43,18 +43,49 @@
 			<div class="rightColumn">
 				<div class="innerRightColumnContact innerRightColumn">
 					<p class="mainP">If you would like to know more about what we can do for your organization, had a project in mind, or just want to chat please email us at <a class="mailLink" href="mailto:hello@aestheticdimension.com">hello@aestheticdimension.com</a></p>
-					<form action="">
+					<form action="" id="form">
 						<div class="formRow">
-							<input type="text" name='firstName' placeholder="First Name" required>
-							<input type="text" name='lastName' placeholder="Last Name" required>
+							<div class="inputMeter">
+								<input class="meterInput"  type="text" name='firstName' placeholder="First Name" required>
+								<div class="meter">
+								  <span oninput="meterWidth"></span>
+								</div>
+							</div>
+							<div class="inputMeter">
+								<input class="meterInput"  type="text" name='lastName' placeholder="Last Name" required>
+								<div class="meter">
+								  <span oninput="meterWidth"></span>
+								</div>
+							</div>
 						</div>
 						<div class="formRow">
-							<input type="text" name='organization' placeholder="Organization (Optional)">
-							<input type="text" name='phone' placeholder="Phone No. (optional)">
+							<div class="inputMeter">
+								<input class="meterInput"  type="text" name='organization' placeholder="Organization (Optional)">
+								<div class="meter">
+								  <span oninput="meterWidth"></span>
+								</div>
+							</div>
+							<div class="inputMeter">
+								<input class="meterInput"  type="text" name='phone' placeholder="Phone No. (optional)">
+								<div class="meter">
+								  <span oninput="meterWidth"></span>
+								</div>
+							</div>
 						</div>
-						<input type="text" name='email' placeholder="Email" required>
-						<textarea name="comments" id="" cols="30" rows="1" placeholder="Comments"></textarea>
-						<button type="submit">
+						<div class="inputMeter">
+							<input class="meterInput" type="text" name='email' placeholder="Email" required>
+							<div class="meter">
+							  <span oninput="meterWidth"></span>
+							</div>
+						</div>
+						<div class="inputMeter">
+							<textarea class="meterInput"  name="comments" id="" cols="30" rows="1" placeholder="Comments"></textarea>
+							<div class="meter">
+							  <span oninput="meterWidth"></span>
+							</div>
+							<button type="submit">
+						</div>
+						<button>
 							<img src="assets/svg/contactEnvelope.svg" alt="Contact">
 							<p class="mainP">Send</p>
 						</button>					
