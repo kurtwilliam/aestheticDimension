@@ -242,14 +242,20 @@ if ( burger ) {
 // Get form, if it exists run code
 let form = document.getElementById('form');
 if ( form ) {
-	let input = document.getElementsByClassName('meterWidth');
+	let input = document.getElementsByClassName('meterInput');
+	console.log(input)
 
-	input.oninput = function(){meterWidth};
+	for (var i=0;i<input.length;i++){
+		input[i].addEventListener('input', meterWidth);
+	}
 
-	input.addEventListener("input", meterWidth);
+	// input.addEventListener("input", function(){
+	// 	this.style.width = "100%";
+	// });
 
 	function meterWidth(x) {
-		x.style.width = "100%";
+		let meter = x.nextSibling.innerHTML;
+		console.log(meter)
 	} 
 };
 
