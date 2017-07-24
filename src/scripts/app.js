@@ -1,9 +1,9 @@
-// Check to see if on home page
+ // Check to see if on home page
 
 document.addEventListener('DOMContentLoaded', function(){
 	let aboutTag = document.getElementById('aboutTag');
-   if ( aboutTag ) { //if the element exists add the click event
-   	
+  if ( aboutTag ) { //if the element exists add the click event
+  	
 
 // CHANGE LANDING PAGE ON HOVER!
 
@@ -152,111 +152,215 @@ function hoverOut(x) {
 
 };
 
-// Check if on page other than home page
+// Home SVG
 
-// Get Burger, if it exists run this code
-let burger = document.getElementById('burger');
-if ( burger ) {
+// Get SVG's and LI
 
-	// HIDDEN CLASS
+let home = document.getElementById('home');
+let homeHover = document.getElementById('homeHover');
+let homeSVG = document.getElementById('homeSVG');
 
-	// Burger hide and show
+// Attach Event Listener 
+homeSVG.addEventListener('mouseover', homeOver);
+home.addEventListener('mouseover', homeOver);
+homeSVG.addEventListener('mouseout', homeOut);
 
-	// Event listener for screen resize
-	window.addEventListener('resize', (e) => {
-	  // JS media query to remove hidden class at mobile responsive
-	  if (window.matchMedia("(min-width: 769px)").matches) {
-	  	burger.classList.add("hidden");
+// run hover function and hoverout function
+function homeOver(x) {
+	// home.classList.add('vHiddenHome')
+	homeHover.classList.remove('vHiddenHome')
+}
 
-	  	// Remove hidden class to burgerMenu UL
-	  	burgerMenu.classList.remove("hidden");
-	  } else {
-	  	burger.classList.remove("hidden");
+function homeOut(x) {
+	// home.classList.remove('vHiddenHome')
+	homeHover.classList.add('vHiddenHome')
+}
 
-	  	// Add hidden class to burgerMenu UL
-	  	burgerMenu.classList.add("hidden");
-	  }
-	});
-
-	// Burger Menu hide and show
-
-	// Get Burger Menu UL, pageTitle element, second burger line
-
-	let burgerMenu = document.getElementById('burgerMenu');
-	let pageTitle = document.getElementById('pageTitle');
-	let burgerLineTwo = document.getElementById('burgerLineTwo');
-	let burgerLineOne = document.getElementById('burgerLineOne');
-	let burgerLineThree = document.getElementById('burgerLineThree');
-
-	burger.addEventListener('click', (e) => {
-		// Event listener to toggle hidden class for burger click
-		burgerMenu.classList.toggle('hidden');
-
-		// if statement to hide .pageTitle on click and display proper menu
-		if (burgerMenu.classList.contains('hidden')) {
-			pageTitle.classList.remove('vHidden');
-
-			// Toggle animation for burger click
-			burger.classList.remove('open');
-		} else {
-			pageTitle.classList.add('vHidden');
-
-			// Toggle animation for burger click
-			burger.classList.add('open');
-		}
-	});
-
-	// Set hidden classes on page load, if window is smaller than 768px
-
-	var w = window.innerWidth;
-
-	if ( w < 768 ) {
-		burger.classList.remove("hidden");
-		burgerMenu.classList.add("hidden");
-	}
-
-	// Home SVG
-
-	// Get SVG's and LI
-
-	let home = document.getElementById('home');
-	let homeHover = document.getElementById('homeHover');
-	let homeSVG = document.getElementById('homeSVG');
-
-	// Attach Event Listener 
-	homeSVG.addEventListener('mouseover', homeOver);
-	homeSVG.addEventListener('mouseout', homeOut);
-
-	// run hover function and hoverout function
-	function homeOver(x) {
-		home.style.display = 'none';
-		homeHover.style.display = 'block';
-	}
-
-	function homeOut(x) {
-		homeHover.style.display = 'none';
-		home.style.display = 'block';
-	}
-};
 
 // Get form, if it exists run code
 let form = document.getElementById('form');
 if ( form ) {
-	let input = document.getElementsByClassName('meterInput');
-	console.log(input)
+	let meterInput = document.getElementsByClassName('meterInput');
 
-	for (var i=0;i<input.length;i++){
-		input[i].addEventListener('input', meterWidth);
-	}
-
-	// input.addEventListener("input", function(){
-	// 	this.style.width = "100%";
-	// });
+	Array.from(meterInput).forEach(function(e) {
+     e.addEventListener('input', meterWidth);
+   });
 
 	function meterWidth(x) {
-		let meter = x.nextSibling.innerHTML;
-		console.log(meter)
+		let input = this.value;
+		let meter = this.nextElementSibling;
+		meter.style.width = '100%';
+
+		if (input.match(/\D/) == null) {
+			meter.style.width = '0%';
+		}
+
+		let firstName = document.getElementById('firstName').value;
+		let lastName = document.getElementById('lastName').value;
+		let email = document.getElementById('email').value;
+		let comments = document.getElementById('comments').value;
+		let bCL = document.getElementById('buttonCoverL')
+		let bCR = document.getElementById('buttonCoverR')
+
+		if (firstName.match(/\D/) !== null && lastName.match(/\D/) !== null && email.match(/\D/) !== null && comments.match(/\D/) !== null ) {
+			bCL.style.width = '0'
+			bCL.style.left = '100.5px'
+			bCR.style.width = '0'
+		} else {
+			bCL.style.width = '100.5px'
+			bCL.style.left = '0px'
+			bCR.style.width = '100.5px'
+		}
 	} 
 };
 
 });
+
+// Burger menu toggler
+
+// Set visibility of burger and menu on page load
+
+// if ( w < 768 ) {
+// 	burger.classList.remove("vHidden");
+// 	burger.classList.add('mobileBurger');
+// } else {
+// 	burger.classList.add("vHidden");
+// }
+
+burger.addEventListener('click', (e) => {
+	burger.classList.toggle('open')
+});
+
+// never even runs...
+function windowResize() {
+	if (window.matchMedia("(min-width: 769px)").matches) {	
+		// console.log('hi')
+		// burger.classList.remove("vHidden");
+	// less than 769px wide
+	} else {
+		burger.classList.remove("vHidden");
+		burger.addEventListener('click', (e) => {
+			// if burger has class of open move menu up
+			if (burger.classList.contains('open')) {
+				leftColumn.style.top = '0'
+				// burger.classList.remove('open')
+			// else move it back
+			} else {
+				leftColumn.style.top = '-323px'
+				// burger.classList.add('open')
+			}
+		});
+	}
+}
+
+var w = window.innerWidth;
+
+function resize() { 
+	w = window.innerWidth;
+	let leftColumn = document.getElementById('leftColumn');
+
+	if ( w < 768 ) {
+		console.log('smaller than 768')
+		burger.classList.remove("vHidden");
+		leftColumn.classList.remove('under300L')
+
+		burger.addEventListener('click', (e) => {
+			// if burger has class of open move menu up
+			if (burger.classList.contains('open')) {
+				leftColumn.style.top = '0'
+				leftColumn.style.left = '0'
+				// burger.classList.remove('open')
+			// else move it back
+			} else {
+				leftColumn.style.top = '-323px'
+				leftColumn.style.left = '0'
+				// burger.classList.add('open')
+			}
+		});
+		burger.classList.add('mobileBurger');
+		leftColumn.style.top = '-323px'
+
+	} else {
+		console.log('bigger than 768')
+		burger.classList.remove('mobileBurger');
+		burger.classList.add("vHidden");
+		leftColumn.style.top = '0'
+		burger.addEventListener('click', (e) => {
+			// if burger has class of open move menu over
+			if (burger.classList.contains('open')) {
+				leftColumn.style.left = '0'
+				leftColumn.style.top = '0'
+
+				// burger.classList.remove('open')
+			// else move it back
+			} else {
+				leftColumn.style.left = '-290px'
+				leftColumn.style.top = '0'
+
+				// burger.classList.add('open')
+			}
+		});
+	}
+}
+
+resize();
+
+window.onresize = resize;
+
+// Scroll function for sidebar shrinking under 300px
+
+window.onscroll=testScroll;
+
+function testScroll(){
+	let burger = document.getElementById('burger');
+	let leftColumn = document.getElementById('leftColumn');
+	let rightColumn = document.getElementById('rightColumn');
+	let burgerMenu = document.getElementById('burgerMenu');
+	let responsiveTitle = document.getElementById('responsiveTitle');
+
+	// If screen is wider than 768px run if statement below
+	if (window.matchMedia("(min-width: 769px)").matches) {
+
+		// burger on click move left column over to see menu options
+		burger.addEventListener('click', (e) => {
+			// if burger has class of open move menu over
+			if (burger.classList.contains('open')) {
+				leftColumn.style.left = '0'
+				leftColumn.style.top = '0'
+
+				// burger.classList.remove('open')
+			// else move it back
+			} else {
+				leftColumn.style.left = '-290px'
+				leftColumn.style.top = '0'
+
+				// burger.classList.add('open')
+			}
+		});	
+		// if the scroll is lower than 250px from top
+		if(window.pageYOffset>250) {
+			// if the scroll is lower than 250px from top move left sidebar over and make skinny, and make right sidebar wider, and add burger menu
+			leftColumn.classList.add('under300L');
+			rightColumn.classList.add('under300R');
+			burger.classList.add('under300Burger');
+			burger.classList.remove('vHidden');
+			leftColumn.style.left = '-290px'
+
+		} else {
+			// if the scroll isn't lower than 250px from top move back to normal setup and make right sidebar normal 
+			leftColumn.classList.remove('under300L');
+			rightColumn.classList.remove('under300R');
+			burger.classList.add('vHidden');
+			burger.classList.remove('under300Burger');
+			
+			leftColumn.style.left = '0'
+			// responsiveTitle.classList.add('hidden')
+		}
+	// else if screen is less than 769px
+	} else {
+		// leftColumn.style.left = '0px'
+
+	}
+}
+
+
