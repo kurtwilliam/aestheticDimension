@@ -245,6 +245,13 @@ header {
 		height:100%;
 		opacity:1;
 		overflow: visible !important;
+		visibility: visible;
+		transition: all 1s ease;
+		.vHiddenIndex {
+			visibility: hidden;
+			opacity: 0;
+			transition: all 1s ease;
+		}
 	}
 	.yellow{
 		top:6.36%;
@@ -754,6 +761,12 @@ header {
 
 .vHidden {
 	position:absolute;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+.vHiddenIndex {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 1s ease;
