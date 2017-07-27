@@ -202,4 +202,9 @@ function testScroll(){
 	}
 }
 
+// Projects hover
+
+// Check if on projects page 
+
+
 
