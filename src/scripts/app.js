@@ -206,5 +206,58 @@ function testScroll(){
 
 // Check if on projects page 
 
+// var elems = document.getElementsByClassName("show-more");
 
+// Array.from(elems).forEach(v => v.addEventListener('click', function() {
+//   this.parentElement.getElementsByClassName('content')[0].classList.toggle('hidden');
+// }));
+
+let project = document.getElementsByClassName('project');
+if ( project ) {
+	// project.addEventListener('mouseover', projectOver)
+	// project.addEventListener('mouseout', projectOut)
+
+	Array.from(project).forEach(v => v.addEventListener('mouseover', projectOver));
+	Array.from(project).forEach(v => v.addEventListener('mouseout', projectOut));
+
+	// for ( let i=0; i<project.length;i++){
+	//   project[i].addEventListener('mouseover',projectOver);
+	//   project[i].addEventListener('mouseout',projectOut);
+	// }
+
+	function projectOver(){
+		// let corner1 = document.querySelector('.redCorner1');
+		// let corner2 = document.querySelector('.redCorner2');
+		// let corner3 = document.querySelector('.redCorner3');
+		// let corner4 = document.querySelector('.redCorner4');
+		// let projectImg = document.querySelector('.projectImg');
+
+		let corner1 = this.childElement.getElementsByClassName('redCorner1')
+		let corner2 = this.childElement.getElementsByClassName('redCorner2')
+		let corner3 = this.childElement.getElementsByClassName('redCorner3')
+		let corner4 = this.childElement.getElementsByClassName('redCorner4')
+		let projectImg = this.childElement.getElementsByClassName('projectImg')
+
+		corner1.classList.add('redCorner1Hover')
+		corner2.classList.add('redCorner2Hover')
+		corner3.classList.add('redCorner3Hover')
+		corner4.classList.add('redCorner4Hover')
+		projectImg.classList.add('imgHover')
+	}
+		
+	function projectOut(){
+		let corner1 = this.childElement.getElementsByClassName('redCorner1')
+		let corner2 = this.childElement.getElementsByClassName('redCorner2')
+		let corner3 = this.childElement.getElementsByClassName('redCorner3')
+		let corner4 = this.childElement.getElementsByClassName('redCorner4')
+		let projectImg = this.childElement.getElementsByClassName('projectImg')
+
+		corner1.classList.remove('redCorner1Hover')
+		corner2.classList.remove('redCorner2Hover')
+		corner3.classList.remove('redCorner3Hover')
+		corner4.classList.remove('redCorner4Hover')
+		projectImg.classList.remove('imgHover')
+
+	}
+}
 

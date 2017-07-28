@@ -840,32 +840,49 @@ header {
         width: 100%;
         height: auto; } }
     .project .projectL img {
-      left: -6px; }
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s ease; }
     .project .projectL .redCorner {
       width: 85px;
       height: 12px;
-      background: #cf0a1d; }
-    .project .projectL .redCorner:nth-of-type(1) {
+      background: #cf0a1d;
+      transition: all 0.5s ease; }
+    .project .projectL .redCorner1 {
       position: absolute;
       top: -6px;
-      left: -12px; }
-    .project .projectL .redCorner:nth-of-type(2) {
+      left: -6px; }
+    .project .projectL .redCorner2 {
       position: absolute;
       top: -12px;
-      left: -6px;
+      left: 0px;
       transform: rotate(90deg);
       transform-origin: left; }
-    .project .projectL .redCorner:nth-of-type(3) {
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-      transform-origin: left; }
-    .project .projectL .redCorner:nth-of-type(4) {
+    .project .projectL .redCorner3 {
       position: absolute;
       bottom: -6px;
-      right: 6px;
+      right: -6px;
+      transform-origin: left; }
+    .project .projectL .redCorner4 {
+      position: absolute;
+      bottom: -12px;
+      right: 0px;
       transform: rotate(90deg);
       transform-origin: right; }
+    .project .projectL .redCorner1Hover {
+      top: -40px;
+      left: -46px; }
+    .project .projectL .redCorner2Hover {
+      top: -46px;
+      left: -40px; }
+    .project .projectL .redCorner3Hover {
+      bottom: -40px;
+      right: -46px; }
+    .project .projectL .redCorner4Hover {
+      bottom: -46px;
+      right: -40px; }
+    .project .projectL .imgHover {
+      transform: scale(1.1); }
   .project .projectL1 {
     background: url("../../assets/projects/galaxyai.png");
     background-size: cover; }
