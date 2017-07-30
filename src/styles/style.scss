@@ -651,7 +651,6 @@ header {
 	display: flex;
 	flex-direction: column;
 	font-family: "Calluna", serif;
-	// align-items: center;
 	.mainP {
 		width:100%;
 	}
@@ -742,12 +741,18 @@ header {
 			z-index: 100;
 			width:100.5px;
 			height:162px;
-			transition: all 1s ease;
+			transition: all 1s ease-in-out;
 		}
 		.buttonCoverL {
 			left:0px;
-			background: url('../../assets/svg/contactEnvelopeGreyL.svg');
+			background: url('../../assets/svg/contactEnvelopeGreyR.svg');
 			background-repeat: no-repeat;
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";
 		}
 		.buttonCoverR {
 			left:100px;
@@ -856,25 +861,6 @@ header {
 			transform: rotate(90deg);
 			transform-origin: right;
 		}
-		.redCorner1Hover{
-			top:-40px;
-			left:-46px;
-		}
-		.redCorner2Hover{
-			top:-46px;
-			left:-40px;
-		}
-		.redCorner3Hover{
-			bottom:-40px;
-			right:-46px;
-		}
-		.redCorner4Hover{
-			bottom:-46px;
-			right:-40px;
-		}
-		.imgHover {
-			transform:scale(1.1);
-		}
 	}
 	.projectL1 {
 		background: url('../../assets/projects/galaxyai.png');
@@ -915,6 +901,26 @@ header {
 	.projectR > p:nth-of-type(1) {
 		order:2;
 	}
+}
+
+.project:hover .redCorner1{
+	top:-40px;
+	left:-46px;
+}
+.project:hover  .redCorner2{
+	top:-46px;
+	left:-40px;
+}
+.project:hover .redCorner3{
+	bottom:-40px;
+	right:-46px;
+}
+.project:hover .redCorner4{
+	bottom:-46px;
+	right:-40px;
+}
+.project:hover .projectImg {
+	transform:scale(1.1);
 }
 
 .project:last-of-type {
@@ -1055,18 +1061,61 @@ header {
 	position: relative;
 	max-width: 700px;
 	padding-bottom:36px;
+	.blogSearchOuter{
+		width:100%;
+		position: relative;
+		height:32px;
+	}
 	.blogSearch	{
 		display: flex;
 		justify-content: flex-end;
-		max-width: 300px;
-		position:relative;
+		align-items: center;
+		width: 38px;
+		position:absolute;
 		right:0px;
-		margin-left:calc(100% - 300px);
+		transition: width 1s ease;
+		img {
+			height:32px;
+			width: 38px;
+			z-index: 100;
+			left:0;
+			position: absolute;
+		}
 		img:hover {
 			cursor: pointer;
 		}
+		.blogSearchInput {
+			position: relative;
+			width:0;
+		}
+		input {
+			font-size: 2.5rem;
+			border: none;
+			resize: none;
+			font-family: "Calluna", serif;
+			transition: width 1s ease;
+			width:0;
+			margin-left: 10px;
+			padding:0;
+		}
 		.meter {
-
+			height: 5px;
+			width:0;
+			position: absolute;
+			background: #009bd0;
+			z-index:100;
+			transition: all 1s 1s ease;
+			bottom: -5px;
+		}
+		span {
+		  	display: block;
+		  	height: 5px;
+		  	width:0;
+			background: rgb(134,135,136);
+		  	position: absolute;
+		  	overflow: hidden;
+			transition: width 1s ease;
+			bottom: -5px;
 		}
 	}
 	.blogPosts {

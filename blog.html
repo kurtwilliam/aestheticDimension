@@ -42,12 +42,14 @@
 			</div>
 			<div class="rightColumn" id="rightColumn">
 				<div class="innerRightColumnBlog innerRightColumn">
-					<div class="blogSearch">
-						<img src="assets/svg/searchIcon.svg" alt="">
-						<div class="blogSearchInput">
-							<input class="meterInput"  type="text" name='firstName' placeholder="First Name" id="firstName" required>
-							<div class="meter"></div>
-							<span></span>
+					<div class="blogSearchOuter">
+						<div class="blogSearch" id="blogSearchContainer">
+							<img src="assets/svg/searchIcon.svg" id="blogSearchImg" alt="">
+							<div class="blogSearch" id="blogSearch">
+								<input   type="text" name='firstName' placeholder="Search ..." id="blogSearchInput" required>
+								<div class="meter" id="blogSearchMeter"></div>
+								<span id="blogSearchBar"></span>
+							</div>
 						</div>
 					</div>
 					<p class="mainP">Aesthetic Dimension was founded on the idea of delving deeper into the role aesthetics play in our lives and the world around us. This blog explores contemporary issues in these places.</p>

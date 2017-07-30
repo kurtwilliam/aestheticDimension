@@ -52,10 +52,10 @@ if ( form ) {
 
 		if (firstName.match(/\D/) !== null && lastName.match(/\D/) !== null && email.match(/\D/) !== null && comments.match(/\D/) !== null ) {
 			bCL.style.width = '0'
-			bCL.style.left = '100.5px'
+			bCL.style.left = '100px'
 			bCR.style.width = '0'
 		} else {
-			bCL.style.width = '100.5px'
+			bCL.style.width = '100px'
 			bCL.style.left = '0px'
 			bCR.style.width = '100.5px'
 		}
@@ -96,7 +96,6 @@ function resize() {
 	let leftColumn = document.getElementById('leftColumn');
 
 	if ( w < 768 ) {
-		console.log('smaller than 768')
 		burger.classList.remove("vHidden");
 		leftColumn.classList.remove('under300L')
 
@@ -117,7 +116,6 @@ function resize() {
 		leftColumn.style.top = '-323px'
 
 	} else {
-		console.log('bigger than 768')
 		burger.classList.remove('mobileBurger');
 		burger.classList.add("vHidden");
 		leftColumn.style.top = '0'
@@ -202,62 +200,38 @@ function testScroll(){
 	}
 }
 
-// Projects hover
+// search input show/hide
 
-// Check if on projects page 
+// check if on blog page
 
-// var elems = document.getElementsByClassName("show-more");
+let blogSearch = document.getElementById('blogSearch')
 
-// Array.from(elems).forEach(v => v.addEventListener('click', function() {
-//   this.parentElement.getElementsByClassName('content')[0].classList.toggle('hidden');
-// }));
+if (blogSearch) {
+	// get elements 
 
-let project = document.getElementsByClassName('project');
-if ( project ) {
-	// project.addEventListener('mouseover', projectOver)
-	// project.addEventListener('mouseout', projectOut)
+	let blogSearchInput = document.getElementById('blogSearchInput')
+	let blogSearchContainer = document.getElementById('blogSearchContainer')
+	let blogSearchMeter = document.getElementById('blogSearchMeter')
+	let blogSearchBar = document.getElementById('blogSearchBar')
+	let blogSearchImg = document.getElementById('blogSearchImg')
 
-	Array.from(project).forEach(v => v.addEventListener('mouseover', projectOver));
-	Array.from(project).forEach(v => v.addEventListener('mouseout', projectOut));
+	blogSearchImg.addEventListener('click', blogSearchWidth);
+	
+	function blogSearchWidth() {
+		blogSearch.style.width = "calc(100% - 38px)";
+		blogSearchContainer.style.width = "300px";
+		blogSearchInput.style.width = "100%";
+		blogSearchInput.style.padding = "1px 1px 1px 0";
+		blogSearchMeter.style.width = "calc(100% - 10px)";
+		blogSearchBar.style.width = "calc(100% - 10px)";
 
-	// for ( let i=0; i<project.length;i++){
-	//   project[i].addEventListener('mouseover',projectOver);
-	//   project[i].addEventListener('mouseout',projectOut);
-	// }
-
-	function projectOver(){
-		// let corner1 = document.querySelector('.redCorner1');
-		// let corner2 = document.querySelector('.redCorner2');
-		// let corner3 = document.querySelector('.redCorner3');
-		// let corner4 = document.querySelector('.redCorner4');
-		// let projectImg = document.querySelector('.projectImg');
-
-		let corner1 = this.childElement.getElementsByClassName('redCorner1')
-		let corner2 = this.childElement.getElementsByClassName('redCorner2')
-		let corner3 = this.childElement.getElementsByClassName('redCorner3')
-		let corner4 = this.childElement.getElementsByClassName('redCorner4')
-		let projectImg = this.childElement.getElementsByClassName('projectImg')
-
-		corner1.classList.add('redCorner1Hover')
-		corner2.classList.add('redCorner2Hover')
-		corner3.classList.add('redCorner3Hover')
-		corner4.classList.add('redCorner4Hover')
-		projectImg.classList.add('imgHover')
-	}
-		
-	function projectOut(){
-		let corner1 = this.childElement.getElementsByClassName('redCorner1')
-		let corner2 = this.childElement.getElementsByClassName('redCorner2')
-		let corner3 = this.childElement.getElementsByClassName('redCorner3')
-		let corner4 = this.childElement.getElementsByClassName('redCorner4')
-		let projectImg = this.childElement.getElementsByClassName('projectImg')
-
-		corner1.classList.remove('redCorner1Hover')
-		corner2.classList.remove('redCorner2Hover')
-		corner3.classList.remove('redCorner3Hover')
-		corner4.classList.remove('redCorner4Hover')
-		projectImg.classList.remove('imgHover')
-
+		if (blogSearchContainer.offsetWidth === 300) {
+			blogSearch.style.width = "0";
+			blogSearchContainer.style.width = "38px";
+			blogSearchInput.style.padding = "0";
+			blogSearchInput.style.width = "0";
+			blogSearchMeter.style.width = "0";
+			blogSearchBar.style.width = "0";
+		}
 	}
 }
-

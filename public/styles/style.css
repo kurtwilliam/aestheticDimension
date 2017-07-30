@@ -772,11 +772,14 @@ header {
       z-index: 100;
       width: 100.5px;
       height: 162px;
-      transition: all 1s ease; }
+      transition: all 1s ease-in-out; }
     .innerRightColumn.innerRightColumnContact form .buttonCoverL {
       left: 0px;
-      background: url("../../assets/svg/contactEnvelopeGreyL.svg");
-      background-repeat: no-repeat; }
+      background: url("../../assets/svg/contactEnvelopeGreyR.svg");
+      background-repeat: no-repeat;
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH"; }
     .innerRightColumn.innerRightColumnContact form .buttonCoverR {
       left: 100px;
       background: url("../../assets/svg/contactEnvelopeGreyR.svg");
@@ -869,20 +872,6 @@ header {
       right: 0px;
       transform: rotate(90deg);
       transform-origin: right; }
-    .project .projectL .redCorner1Hover {
-      top: -40px;
-      left: -46px; }
-    .project .projectL .redCorner2Hover {
-      top: -46px;
-      left: -40px; }
-    .project .projectL .redCorner3Hover {
-      bottom: -40px;
-      right: -46px; }
-    .project .projectL .redCorner4Hover {
-      bottom: -46px;
-      right: -40px; }
-    .project .projectL .imgHover {
-      transform: scale(1.1); }
   .project .projectL1 {
     background: url("../../assets/projects/galaxyai.png");
     background-size: cover; }
@@ -921,6 +910,25 @@ header {
   .project .projectR > p:nth-of-type(1) {
     -ms-flex-order: 2;
         order: 2; }
+
+.project:hover .redCorner1 {
+  top: -40px;
+  left: -46px; }
+
+.project:hover .redCorner2 {
+  top: -46px;
+  left: -40px; }
+
+.project:hover .redCorner3 {
+  bottom: -40px;
+  right: -46px; }
+
+.project:hover .redCorner4 {
+  bottom: -46px;
+  right: -40px; }
+
+.project:hover .projectImg {
+  transform: scale(1.1); }
 
 .project:last-of-type {
   margin-bottom: 50px; }
@@ -1044,17 +1052,58 @@ header {
   position: relative;
   max-width: 700px;
   padding-bottom: 36px; }
+  .innerRightColumn.innerRightColumnBlog .blogSearchOuter {
+    width: 100%;
+    position: relative;
+    height: 32px; }
   .innerRightColumn.innerRightColumnBlog .blogSearch {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: end;
         justify-content: flex-end;
-    max-width: 300px;
-    position: relative;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 38px;
+    position: absolute;
     right: 0px;
-    margin-left: calc(100% - 300px); }
+    transition: width 1s ease; }
+    .innerRightColumn.innerRightColumnBlog .blogSearch img {
+      height: 32px;
+      width: 38px;
+      z-index: 100;
+      left: 0;
+      position: absolute; }
     .innerRightColumn.innerRightColumnBlog .blogSearch img:hover {
       cursor: pointer; }
+    .innerRightColumn.innerRightColumnBlog .blogSearch .blogSearchInput {
+      position: relative;
+      width: 0; }
+    .innerRightColumn.innerRightColumnBlog .blogSearch input {
+      font-size: 2.5rem;
+      border: none;
+      resize: none;
+      font-family: "Calluna", serif;
+      transition: width 1s ease;
+      width: 0;
+      margin-left: 10px;
+      padding: 0; }
+    .innerRightColumn.innerRightColumnBlog .blogSearch .meter {
+      height: 5px;
+      width: 0;
+      position: absolute;
+      background: #009bd0;
+      z-index: 100;
+      transition: all 1s 1s ease;
+      bottom: -5px; }
+    .innerRightColumn.innerRightColumnBlog .blogSearch span {
+      display: block;
+      height: 5px;
+      width: 0;
+      background: #868788;
+      position: absolute;
+      overflow: hidden;
+      transition: width 1s ease;
+      bottom: -5px; }
   .innerRightColumn.innerRightColumnBlog .blogPosts {
     display: -ms-flexbox;
     display: flex;
