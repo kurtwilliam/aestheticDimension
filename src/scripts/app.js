@@ -225,7 +225,7 @@ if (blogSearch) {
 		blogSearchMeter.style.width = "calc(100% - 10px)";
 		blogSearchBar.style.width = "calc(100% - 10px)";
 
-		if (blogSearchContainer.offsetWidth === 300) {
+		if (blogSearchContainer.offsetWidth >= 80) {
 			blogSearch.style.width = "0";
 			blogSearchContainer.style.width = "38px";
 			blogSearchInput.style.padding = "0";

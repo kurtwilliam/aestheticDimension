@@ -553,12 +553,17 @@ header {
 		max-width: 700px;
 		padding: 120px 90px;
 		@media(max-width: 768px) {
-			margin-top:130px;
+			margin:130px 90px 0 90px;
 			padding: 0;
+			max-width:630px;
 		}
-		@media(max-width: 500px) {
-			// margin-top:95px;
-			padding: 0 15px;
+		@media(max-width: 600px) {
+			margin:130px 50px 0 50px;
+			padding: 0;
+			max-width:630px;
+		}
+		@media(max-width: 450px) {
+			margin:130px 25px 0 25px;
 		}
 		.mainP {
 			font-size: 3rem;
@@ -804,8 +809,20 @@ header {
 	height:auto;
 	margin: 0 6px;
 	margin-top:50px;
+	left:-6px;
+	@media(max-width: 1050px){
+		flex-direction: column;
+	}
+	@media(max-width: 768px){
+		flex-direction: row;
+	}
 	@media(max-width: 600px){
 		flex-direction: column;
+	}
+	@media(max-width: 400px){
+		max-width:275px;
+		margin: 50px auto 0 auto;
+		left:0;
 	}
 	a {
 		z-index: 100;
@@ -821,6 +838,14 @@ header {
 		width:285px;
 		height:228px;
 		transition:all 1s ease;
+		@media(max-width: 1050px){
+			width:100%;
+			height:auto;
+		}
+		@media(max-width: 768px){
+			width:285px;
+			height:228px;
+		}
 		@media(max-width: 600px){
 			width:100%;
 			height:auto;
@@ -881,8 +906,13 @@ header {
 		justify-content: center;
 		align-items: flex-start;
 		flex-direction: column;
-		@media(max-width:975px){
-			padding-left: 20px;
+		@media(max-width:1050px){
+			width:100%;
+			padding-left: 0;
+		}
+		@media(max-width:768px){
+			width:calc(100% - 285px);
+			padding-left: 60px;
 		}
 		@media(max-width:600px){
 			width:100%;
@@ -893,6 +923,12 @@ header {
 			font-size: 2.5rem;
 			font-weight: 600;
 			padding: 10px 0;
+			@media(max-width:1050px){
+				margin-top:24px;
+			}
+			@media(max-width:768px){
+				margin-top:0;
+			}
 			@media(max-width:600px){
 				margin-top:24px;
 			}
@@ -906,21 +942,46 @@ header {
 .project:hover .redCorner1{
 	top:-40px;
 	left:-46px;
+	@media(max-width: 500px) {
+		top:-28px;
+		left:-31px;
+	}
 }
 .project:hover  .redCorner2{
 	top:-46px;
 	left:-40px;
+	@media(max-width: 500px) {
+		top:-34px;
+		left:-25px;
+	}
 }
 .project:hover .redCorner3{
 	bottom:-40px;
 	right:-46px;
+	@media(max-width: 500px) {
+		bottom:-25px;
+		right:-31px;
+	}
 }
 .project:hover .redCorner4{
 	bottom:-46px;
 	right:-40px;
+	@media(max-width: 500px) {
+		bottom:-31px;
+		right:-25px;
+	}
 }
 .project:hover .projectImg {
 	transform:scale(1.1);
+	@media(max-width:1050px){
+		transform:scale(1.05);
+	}
+	@media(max-width:768px){
+		transform:scale(1.1);
+	}
+	@media(max-width:600px){
+		transform:scale(1.05);
+	}
 }
 
 .project:last-of-type {
@@ -1016,15 +1077,18 @@ header {
 	.singlePhoto {
 		width:100%;
 		height:auto;
-		@media(max-width:600px){
+		@media(max-width:768px){
 			position: relative;
 			width:100vw;
-			left: -35px;
+			left: -50px;
 		}
-		@media(max-width:500px){
-			width:100vw;
-			left: -15px;
+		@media(max-width: 450px) {
+			left:-25px;
 		}
+		// @media(max-width:500px){
+		// 	width:100vw;
+		// 	left: -50px;
+		// }
 	}
 	.pDesc {
 		margin:36px 0;
@@ -1059,7 +1123,7 @@ header {
 
 .innerRightColumn.innerRightColumnBlog {
 	position: relative;
-	max-width: 700px;
+	// max-width: 700px;
 	padding-bottom:36px;
 	.blogSearchOuter{
 		width:100%;
@@ -1073,7 +1137,8 @@ header {
 		width: 38px;
 		position:absolute;
 		right:0px;
-		transition: width 1s ease;
+		transition: width 1s linear;
+		max-width:100%;
 		img {
 			height:32px;
 			width: 38px;
@@ -1093,7 +1158,7 @@ header {
 			border: none;
 			resize: none;
 			font-family: "Calluna", serif;
-			transition: width 1s ease;
+			transition: width 1s linear;
 			width:0;
 			margin-left: 10px;
 			padding:0;
@@ -1104,7 +1169,7 @@ header {
 			position: absolute;
 			background: #009bd0;
 			z-index:100;
-			transition: all 1s 1s ease;
+			transition: all 1s 1s linear;
 			bottom: -5px;
 		}
 		span {
@@ -1114,7 +1179,7 @@ header {
 			background: rgb(134,135,136);
 		  	position: absolute;
 		  	overflow: hidden;
-			transition: width 1s ease;
+			transition: width 1s linear;
 			bottom: -5px;
 		}
 	}
