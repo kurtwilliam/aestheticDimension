@@ -195,7 +195,6 @@ function testScroll(){
 		}
 	// else if screen is less than 769px
 	} else {
-		// leftColumn.style.left = '0px'
 
 	}
 }
