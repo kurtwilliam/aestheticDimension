@@ -234,3 +234,10 @@ if (blogSearch) {
 		}
 	}
 }
+
+let mailLink = document.querySelector('.mailLink');
+
+if (mailLink) {
+	var index = mailLink.stringify.indexOf('@')
+	console.log(index);
+}
