@@ -768,6 +768,16 @@ header {
 	}
 }
 
+// .contactCoverPulse {
+// 	z-index:-10;
+// 	width:100px;
+// 	transition: all 0.00001s ease-in-out;
+// }
+
+// .contactCoverNormal {
+	
+// }
+
 .hidden {
 	display: none;
 	// transition: all 1s ease;
@@ -939,47 +949,41 @@ header {
 }
 
 .project:hover .redCorner1{
-	top:-25px;
+	top:-29px;
 	left:-31px;
-	@media(max-width: 500px) {
-		top:-13px;
-		left:-16px;
+	@media(max-width: 350px) {
+		top:-20px;
+		left:-21px;
 	}
 }
 .project:hover  .redCorner2{
-	top:-31px;
+	top:-35px;
 	left:-25px;
-	@media(max-width: 500px) {
-		top:-19px;
-		left:-10px;
+	@media(max-width: 350px) {
+		top:-26px;
+		left:-15px;
 	}
 }
 .project:hover .redCorner3{
 	bottom:-25px;
 	right:-31px;
-	@media(max-width: 500px) {
-		bottom:-10px;
-		right:-16px;
+	@media(max-width: 350px) {
+		bottom:-16px;
+		right:-21px;
 	}
 }
 .project:hover .redCorner4{
 	bottom:-31px;
 	right:-25px;
-	@media(max-width: 500px) {
-		bottom:-16px;
-		right:-10px;
+	@media(max-width: 350px) {
+		bottom:-22px;
+		right:-15px;
 	}
 }
 .project:hover .projectImg {
 	transform:scale(1.025);
-	@media(max-width:1050px){
-		transform:scale(1.05);
-	}
-	@media(max-width:768px){
-		transform:scale(1.1);
-	}
-	@media(max-width:600px){
-		transform:scale(1.05);
+	@media(max-width:350px){
+		transform:scale(1.0125);
 	}
 }
 

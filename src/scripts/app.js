@@ -49,11 +49,21 @@ if ( form ) {
 		let comments = document.getElementById('comments').value;
 		let bCL = document.getElementById('buttonCoverL')
 		let bCR = document.getElementById('buttonCoverR')
+		let cB = document.getElementById('contactButton')
 
 		if (firstName.match(/\D/) !== null && lastName.match(/\D/) !== null && email.match(/\D/) !== null && comments.match(/\D/) !== null ) {
 			bCL.style.width = '0'
 			bCL.style.left = '100px'
 			bCR.style.width = '0'
+
+			// function pulseGreenActive() {
+			// 	bCL.style.zIndex = '-10'
+			// 	bCR.style.zIndex = '-10'
+
+
+			// 	// Add class to make 
+			// 	cB.classList.add
+			// }
 		} else {
 			bCL.style.width = '100px'
 			bCL.style.left = '0px'
